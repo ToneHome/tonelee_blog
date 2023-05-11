@@ -1,6 +1,6 @@
 <template>
     <div class="text-red-300">{{ a }}</div>
-    <button @click="toAbout">about</button>
+    <button class="border p-2" @click="toAbout">about</button>
     <AppAlert>
         sdsd
     </AppAlert>

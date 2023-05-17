@@ -1,0 +1,51 @@
+.front-box{
+    z-index: 2;
+}
+
+.behind-box{
+    z-index: 1;
+}
+
+.front-box.change-an{
+    animation: front-to-back 1s ease-in-out;
+}
+.behind-box.change-an{
+    animation: back-to-front 1s ease-in-out;
+}
+
+@keyframes front-to-back {
+   0%{
+       transform: translate(-50%,-50%);
+       z-index: 2;
+       opacity: 1;
+   }
+    50%{
+        transform: translate(-30%,-70%);
+        z-index: 1;
+        opacity: 0.5;
+    }
+    100%{
+        transform: translate(-50%,-50%);
+        z-index: 1;
+        opacity: 1;
+    }
+
+}
+@keyframes back-to-front {
+    0%{
+        transform: translate(-50%,-50%);
+        z-index: 1;
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-70%,-30%);
+        z-index: 2;
+        opacity: 0.5;
+    }
+    100%{
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        opacity: 1;
+    }
+
+}

@@ -15,7 +15,7 @@
       setTimeout(() => {
           formType.value = formType.value === 'login' ? 'register' : 'login'
           isChanging.value = false
-      },1000)
+      },500)
   }
 
   const loginData = reactive({
@@ -28,40 +28,41 @@
       password:"",
       confirmPassword:""
   })
+
+  const showInput = ref(false)
+  onMounted(() => {
+      setTimeout(() => {
+          showInput.value = true
+      })
+  })
 </script>
 
 <template>
-    <LoginBox :class="{'front-box':formType === 'login','behind-box':formType === 'register','change-an': isChanging}">
-        <span class="absolute right-0 top-0 w-1/6 h-1/6 bg-yellow-400 cursor-pointer" @click="changeStatus">
-
-        </span>
+    <LoginBox @click-toggle="changeStatus" toggle-text="注册" :class="{'front-box':formType === 'login','behind-box':formType === 'register','change-an': isChanging}">
         <div class="login-form w-full p-[30px] pt-[40px]">
-            <div class="mb-[16px]">
-                <input v-model="loginData.username" class="w-full px-[15px] h-[32px] border" />
+            <div class="form-item">
+                <input  v-show="showInput" v-model="loginData.username" name="addr" autocomplete="off" placeholder="请输入用户名" />
             </div>
-            <div class="mb-[16px]">
-                <input type="password" v-model="loginData.password" class="w-full px-[15px] h-[32px] border" />
+            <div class="form-item">
+                <input v-show="showInput" type="password" v-model="loginData.password" placeholder="请输入密码" />
             </div>
-            <div class="mb-[16px]">
+            <div class="form-item">
                <button class="w-full bg-cyan-500 text-white py-[6px]">提交</button>
             </div>
         </div>
     </LoginBox>
-    <LoginBox :class="{'front-box':formType === 'register','behind-box':formType === 'login','change-an': isChanging}">
-        <span class="absolute right-0 top-0 w-1/6 h-1/6 bg-yellow-400 cursor-pointer" @click="changeStatus">
-
-        </span>
+    <LoginBox @click-toggle="changeStatus" toggle-text="返回登录" :class="{'front-box':formType === 'register','behind-box':formType === 'login','change-an': isChanging}">
         <div class="register-form w-full p-[30px] pt-[40px]">
-            <div class="mb-[16px]">
-                <input v-model="registerData.username" class="w-full px-[15px] h-[32px] border" />
+            <div class="form-item">
+                <input v-show="showInput" v-model="registerData.username" placeholder="请输入用户名" />
             </div>
-            <div class="mb-[16px]">
-                <input type="password" v-model="registerData.password" class="w-full px-[15px] h-[32px] border" />
+            <div class="form-item">
+                <input v-show="showInput" type="password" v-model="registerData.password" placeholder="输入密码" />
             </div>
-            <div class="mb-[16px]">
-                <input type="password" v-model="registerData.confirmPassword" class="w-full px-[15px] h-[32px] border" />
+            <div class="form-item">
+                <input type="password" v-show="showInput" v-model="registerData.confirmPassword" placeholder="确认密码" />
             </div>
-            <div class="mb-[16px]">
+            <div class="form-item">
                 <button class="w-full bg-cyan-500 text-white py-[6px]">提交</button>
             </div>
         </div>

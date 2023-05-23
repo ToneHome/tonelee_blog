@@ -1,21 +1,13 @@
 <template>
-    <div class="text-red-300">{{ a }}</div>
-    <button class="border p-2" @click="toAbout">about</button>
-    <AppAlert>
-        sdsd
-    </AppAlert>
+    <NConfigProvider inline-theme-disabled>
+        <NButton>
+            111
+        </NButton>
+    </NConfigProvider>
 </template>
     
 <script setup lang='ts'>
-    const a = ref('1')
-    function toAbout(){
-        navigateTo({
-            path:'/about',
-            query:{
-                id: Math.random()
-            }
-        })
-    }
+    import { NConfigProvider,NButton } from 'naive-ui'
 </script>
     
 <style>

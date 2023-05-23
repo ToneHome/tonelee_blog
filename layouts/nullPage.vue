@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 relative">
+  <div class="w-screen h-screen bg-gradient-to-r from-[#141e30] to-[#243b55] relative">
       <slot></slot>
   </div>
 </template>

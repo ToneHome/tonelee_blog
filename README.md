@@ -1,42 +1,32 @@
-# Nuxt 3 Minimal Starter
+## 个人博客
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### 参考
 
-## Setup
+> [demo](https://themes.3rdwavemedia.com/devcard/bs5/resume.html)
 
-Make sure to install the dependencies:
 
-```bash
-# yarn
-yarn install
+### 技术栈
 
-# npm
-npm install
+|前端	|nuxt3 + tailwindcss|
+|--|--|
+|后台|nestjs + mysql|
 
-# pnpm
-pnpm install
-```
+### 页面
 
-## Development Server
 
-Start the development server on `http://localhost:3000`
+- 侧边栏-个人简介
+  - 姓名、头像、简介、社交账号link、菜单
+  - 设置
+    - 黑暗模式切换
+        - 使用系统主题 （feature）
+- 首页
+    - 主界面
+        - 个人详细信息
+        - 简历 link
+        - 前端相关的网站链接
+    - 简历
+    - 博客
+    - 联系我
 
-```bash
-npm run dev
-```
 
-## Production
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

@@ -1,3 +1,5 @@
+@tailwind base;
+
 .front-box{
     z-index: 2;
 }
@@ -7,10 +9,10 @@
 }
 
 .front-box.change-an{
-    animation: front-to-back 1s ease-in-out;
+    animation: front-to-back 0.5s ease-in-out;
 }
 .behind-box.change-an{
-    animation: back-to-front 1s ease-in-out;
+    animation: back-to-front 0.5s ease-in-out;
 }
 
 @keyframes front-to-back {
@@ -22,7 +24,7 @@
     50%{
         transform: translate(-30%,-70%);
         z-index: 1;
-        opacity: 0.5;
+        opacity: 0.7;
     }
     100%{
         transform: translate(-50%,-50%);
@@ -40,7 +42,7 @@
     50%{
         transform: translate(-70%,-30%);
         z-index: 2;
-        opacity: 0.5;
+        opacity: 0.3;
     }
     100%{
         transform: translate(-50%,-50%);
@@ -48,4 +50,16 @@
         opacity: 1;
     }
 
+}
+
+.login-box .form-item{
+    margin-bottom: 24px;
+}
+.login-box .form-item input{
+    background: black;
+    outline: none;
+    font-size: 10px;
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding: 10px 12px;
 }

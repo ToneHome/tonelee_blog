@@ -1,15 +1,12 @@
 <template>
-    <NConfigProvider inline-theme-disabled>
-        <NButton>
-            111
-        </NButton>
-    </NConfigProvider>
+    <div>
+        {{ data?.hello }}
+    </div>
 </template>
     
 <script setup lang='ts'>
-    import { NConfigProvider,NButton } from 'naive-ui'
+
+const {data} = await useFetch('/api/hello')
 </script>
     
-<style>
-    
-</style>
+<style></style>

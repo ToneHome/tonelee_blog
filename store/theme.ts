@@ -1,7 +1,7 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-export const useThemeStore = defineStore('theme',() => {
+export const useThemeStore = defineStore('theme', () => {
     return {
-        theme:'light'
+        theme: 'light',
     }
 })

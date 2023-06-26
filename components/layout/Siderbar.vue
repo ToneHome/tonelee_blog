@@ -14,7 +14,7 @@
         </div>
 
         <div class="flex items-center justify-between text-[14px] mt-[15px] text-white link ">
-            <div class="item">微博</div>
+            <div class="item">微博test</div>
             <div class="item">github</div>
             <div class="item">微信</div>
         </div>

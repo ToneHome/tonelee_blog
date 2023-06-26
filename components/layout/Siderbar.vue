@@ -18,14 +18,13 @@
             <div class="item">github</div>
             <div class="item">微信</div>
         </div>
-        <div class=" border-b-[1px] border-b-white-500 mt-[20px]"> </div>
+        <div class="border-b-[1px] border-b-white-500 mt-[20px]"></div>
         <div class="menu text-[18px] text-white">
             <ul>
                 <li v-for="item in appConfig.menu">
                     <a href="javascript:;" @click="() => toPage(item.key)">
                         {{ item.lable }}
                     </a>
-
                 </li>
             </ul>
         </div>
@@ -34,7 +33,6 @@
 <script setup lang='ts'>
 import './Siderbar.scss'
 const appConfig = useAppConfig()
-
 function toPage(key:string){
     navigateTo(`/${key}`);
 }

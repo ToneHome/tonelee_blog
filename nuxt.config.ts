@@ -1,27 +1,82 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import presetIcons from '@unocss/preset-icons'
 
 export default defineNuxtConfig({
-    modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@pinia/nuxt', '@intlify/nuxt3', '@nuxtjs/eslint-module'],
-    content: {
-        // https://content.nuxtjs.org/api/configuration
-    },
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
+  srcDir: 'src',
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxtjs/tailwindcss',
+    // pinia plugin - https://pinia.esm.dev
+    '@pinia/nuxt',
+    // unocss plugin - https://github.com/unocss/unocss
+    '@unocss/nuxt',
+    '@nuxtjs/i18n',
+    '@nuxtjs/color-mode',
+    // https://github.com/huntersofbook/huntersofbook/tree/main/packages/naive-ui-nuxt
+    '@huntersofbook/naive-ui-nuxt',
+  ],
+  build: {
+    transpile: ['@headlessui/vue'],
+  },
+  unocss: {
+    uno: false,
+    preflight: false,
+    icons: true,
+    presets: [
+      presetIcons({
+        scale: 1.2,
+        extraProperties: {
+          display: 'inline-block',
         },
+      }),
+    ],
+    safelist: ['i-twemoji-flag-us-outlying-islands', 'i-twemoji-flag-turkey'],
+  },
+
+  // localization - i18n config
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.json',
+      },
+      { code: 'tr', file: 'tr-TR.json' },
+    ],
+    defaultLocale: 'tr',
+    lazy: true,
+    langDir: 'locales/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root', // recommended
     },
-    css: ['@/assets/tailwind.css'],
-    build: {
-        transpile:
-            process.env.NODE_ENV === 'production'
-                ? ['naive-ui', 'vueuc', '@css-render/vue3-ssr', '@juggle/resize-observer']
-                : ['@juggle/resize-observer'],
+    // vueI18n: {
+    //   legacy: false,
+    //   locale: 'tr',
+    //   fallbackLocale: 'tr',
+    //   availableLocales: ['en', 'tr'],
+    // },
+  },
+
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        strict: true,
+        types: ['@pinia/nuxt', './type.d.ts'],
+      },
     },
-    vite: {
-        optimizeDeps: {
-            include:
-                process.env.NODE_ENV === 'development' ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone'] : [],
-        },
-    },
+  },
+  colorMode: {
+    classSuffix: '',
+    fallback: 'light',
+    storageKey: 'color-mode',
+  },
+
+  tailwindcss: {
+    configPath: './tailwind.config.ts',
+  },
+
+  vite: {
+    logLevel: 'info',
+  },
 })

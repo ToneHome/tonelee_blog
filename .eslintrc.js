@@ -10,11 +10,11 @@ module.exports = {
     extends: [
         // '@nuxtjs',
         'plugin:nuxt/recommended',
-        'plugin:prettier/recommended',
-        'prettier',
+        // 'plugin:prettier/recommended',
+        // 'prettier',
         'plugin:@typescript-eslint/recommended',
     ],
-    plugins: ['prettier'],
+    plugins: [],
     // add your custom rules here
     rules: {
         // 'nuxt/no-cjs-in-config': 'off',

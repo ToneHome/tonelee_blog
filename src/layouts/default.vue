@@ -2,7 +2,7 @@
     <NConfigProvider :class="`flex items-center w-full h-full ${themeStore.theme}`" inline-theme-disabled>
         <LayoutSiderbar></LayoutSiderbar>
         <main class="flex-1 h-full">
-            <slot />
+                <slot />
         </main>
     </NConfigProvider>
 </template>
@@ -14,6 +14,6 @@ import { useThemeStore } from '~/store/theme';
 const layout = "custom";
 
 // 主题的 store
-const themeStore  = useThemeStore()
+const themeStore = useThemeStore()
 
 </script>

@@ -20,9 +20,9 @@
         </div>
         <div class="border-b-[1px] border-b-white-500 mt-[20px]"></div>
         <div class="menu text-[18px] text-white">
-            <ul>
-                <li v-for="item in appConfig.menu">
-                    <a href="javascript:;" @click="() => toPage(item.key)">
+            <ul class="pt-[14px]">
+                <li class="my-[15px] text-center" v-for="item in appConfig.menu">
+                    <a :class="{' text-[#333]':route.path.indexOf(item.key) > -1}" href="javascript:;" @click="() => toPage(item.key)">
                         {{ item.lable }}
                     </a>
                 </li>
@@ -33,6 +33,9 @@
 <script setup lang='ts'>
 import './Siderbar.scss'
 const appConfig = useAppConfig()
+const route = useRoute()
+// console.log('route: ', route);
+
 function toPage(key:string){
     navigateTo(`/${key}`);
 }

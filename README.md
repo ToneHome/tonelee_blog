@@ -1,63 +1,32 @@
-# Nuxt 3 Starter
+## 个人博客
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+### 参考
 
-## Preview
-![image](https://user-images.githubusercontent.com/38668796/179501879-b1efa419-8419-4c27-a79e-d185cb2884b7.png)
-
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/productdevbook/nuxt3-app)
-
-## Deploy your own
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/productdevbook/nuxt3-app)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/productdevbook/nuxt3-app)
-
-This starter template also includes:
-
-- [Tailwind CSS v3](https://github.com/tailwindlabs/tailwindcss)
-- [Eslint](https://eslint.org)
-- [Headless UI](https://headlessui.dev/vue/menu) - unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS
-- [Icones](https://github.com/antfu/icones) - beautiful hand-crafted SVG icons with [Unocss](https://github.com/unocss/unocss) used. 
-
-First-party plugins needed for Tailwind UI:
-
-- [tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
-- [tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography)
-- [tailwindcss/line-clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp)
-- [tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
+> [demo](https://themes.3rdwavemedia.com/devcard/bs5/resume.html)
 
 
-Best Nuxt with Plugins:
-- [Pinia](https://github.com/posva/pinia)
+### 技术栈
 
-## Setup
+|前端	|nuxt3 + tailwindcss|
+|--|--|
+|后台|nestjs + mysql|
 
-Make sure to install the dependencies
+### 页面
 
-```bash
-pnpm install
-```
 
-## Development
+- 侧边栏-个人简介
+  - 姓名、头像、简介、社交账号link、菜单
+  - 设置
+    - 黑暗模式切换
+        - 使用系统主题 （feature）
+- 首页
+    - 主界面
+        - 个人详细信息
+        - 简历 link
+        - 前端相关的网站链接
+    - 简历
+    - 博客
+    - 联系我
 
-Start the development server on http://localhost:3000
 
-```bash
-pnpm dev
-```
 
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-```bash
-pnpm start
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
